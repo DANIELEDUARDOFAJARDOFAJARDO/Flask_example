@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Filter</title>
+</head>
+<body>
+    <h1>Table Filter</h1>
+    <form method="POST" action="/">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <br>
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age">
+        <br>
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender" id="gender">
+        <br>
+        <input type="submit" value="Filter">
+    </form>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.gender }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
